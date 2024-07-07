@@ -178,7 +178,6 @@ function loadPreviousPreset() {
     initFromDicts(presets[preset_index]);
 }
 
-
 function loadNextPreset() {
     if (preset_index != presets.length - 1) {
         preset_index += 1;
@@ -187,4 +186,9 @@ function loadNextPreset() {
         preset_index = 0;
     }
     initFromDicts(presets[preset_index]);
+}
+
+function loadRandomPreset() {
+    let randomInt = Math.floor(Math.random() * presets.length);
+    initFromDicts(presets[randomInt]);
 }
