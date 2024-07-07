@@ -101,25 +101,26 @@
             <button class="button" onclick="showInfo()">show/hide info</button>
         </div>
         <div id="info-overlay" class="info-overlay">
+            <button class="close-btn-info" onclick="showInfo()">-</button>
             <h1>About</h1>
 
-            This is an emulation of a modular analog video synthesizer, which is entirely coded in javascript using
-            WebGL (Three.js) to display the image.<br>
-            It consists of nodes which each respresent a fragment shader. Each node has an input (left) and an output
+            <p>This is an emulation of a modular analog video synthesizer, which is entirely coded in javascript using
+            WebGL (Three.js) to display the image.</p>
+            <p>It consists of nodes which each respresent a fragment shader. Each node has an input (left) and an output
             (right). Connections can be made (or deleted) between those nodes.
             Nodes can be generators (creating an image) or effects (modifying the input). All nodes connected to the
-            ouput node will be displayed.<br>
-            The generators input functions as a frequency modulation on the input, this can be used e.g. to create
+            ouput node will be displayed.</p>
+            <p>The generators input functions as a frequency modulation on the input, this can be used e.g. to create
             interesting frequency modulation feedback loops.
             Outputs can't be connected to the input of the same node, but this can be done by using a node in between to
-            create feedback loops (which lead to very interesting visual results).
+            create feedback loops (which lead to very interesting visual results).</p>
 
             <h2>How to use:</h2>
 
-            Open the main.html and play around with it. Move around some sliders or try out some presets. Create and
-            connect nodes however you wish.<br>
-            Currently Nodes only listen to the first input, except for the output module which displays all connected
-            inputs. (this might change in future versions).<br>
+            <p>Play around with it. Move around some sliders or try out some presets. Create and
+            connect nodes however you wish.</p>
+            <p>Currently Nodes only listen to the first input, except for the output module which displays all connected
+            inputs. (this might change in future versions).</p>
 
             - select a module type in the dropdown and right click somewhere on the screen. This will create a new node
             with the selected type of module<br>

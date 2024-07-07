@@ -159,6 +159,18 @@
     color: black;
 }
 
+.close-btn-info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    border: none;
+}
+
 .output {
     position: absolute;
     top: 50%;
