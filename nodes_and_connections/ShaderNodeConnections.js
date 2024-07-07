@@ -192,3 +192,7 @@ function loadRandomPreset() {
     let randomInt = Math.floor(Math.random() * presets.length);
     initFromDicts(presets[randomInt]);
 }
+
+function loadPreset(i) {
+    initFromDicts(presets[i]);
+}
