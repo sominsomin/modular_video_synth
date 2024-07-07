@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Shader Stack</title>
+    <style>
+        html *
+        {
+        font-size: 1em !important;
+        color: #000 !important;
+        font-family: Arial !important;
+        }
+        body { margin: 0; background-color: #000;}
+        #top {
+            position: absolute;
+            top: 10px; 
+            left: 10px; 
+            z-index: 100;
+        }
+        #container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .button {
+            font-size: 12px !important;
+            border-radius: 8px;
+            border: 1px solid #000;
+            background-color: rgb(255, 255, 255, 0.8);
+            text-align: center;
+            margin: 0 auto;
+            padding: 0;
+            display: table-cell;
+            vertical-align: middle;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            width: 90px;
+            height: 35px;
+        }
+        #selectorWrapper {
+            max-width: 100px;
+            padding: 4px;
+            padding-bottom: 10px;
+        }
+        #canvasContainer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        canvas { display: block; width: 100vw; height: 100vh;}
+
+    </style>
+    <link href="GUI/gui.css" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <div id="top">
+            <div id="selectorWrapper">
+                <select id="moduleType">
+                    <option value="empty_generators">--Generators--</option>
+                    <option value="Oscillator">Oscillator</option>
+                    <option value="polyShape">polyShape</option>
+                    <option value="polyShapeStatic">polyShapeStatic</option>
+                    <option value="noise">noise</option>
+                    <option value="constant">constant</option>
+                    <option value="empty_fx">--FX--</option>
+                    <option value="kaleidoscope">kaleidoscope</option>
+                    <option value="pixelate">pixelate</option>
+                    <option value="color">color</option>
+                    <option value="translate">translate</option>
+                    <option value="scale_fract">scale_fract</option>
+                    <option value="space_warp">space_warp</option>
+                    <!-- Add more module options as needed -->
+                </select>
+            </div>
+            <!-- <button class="button" onclick="decreaseScale()">Decrease Size</button> -->
+            <!-- <button class="button" onclick="increaseScale()">Increase Size</button> -->
+            <button class="button" onclick="hideModules()">show/hide modules</button>
+            <button class="button" onclick="changeModuleTransparency()">change module transparency</button>
+            <button class="button" onclick="loadPreviousPreset()">previous preset</button>
+            <button class="button" onclick="loadNextPreset()">next preset</button>
+        </div>
+    </div>
+    <div id="canvasContainer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.140.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.140.2/examples/js/postprocessing/EffectComposer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.140.2/examples/js/postprocessing/RenderPass.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.140.2/examples/js/postprocessing/ShaderPass.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.140.2/examples/js/shaders/CopyShader.js"></script>
+    <script src="nodes_and_connections/ShaderNodeConnections.js"></script>
+    <script src="shader/shaderModules.js"></script>
+    <script src="modules/ModuleBaseClass.js"></script>
+    <script src="modules/Oscillator.js"></script>
+    <script src="modules/FX.js"></script>
+    <script src="shader/ShaderConstructor.js"></script>
+    <script src="GUI/leader-line-master/leader-line.min.js"></script>
+    <script src="GUI/curve.js"></script>
+    <script src="GUI/ShaderValue.js"></script>
+    <script src="GUI/moduleCreator.js"></script>
+    <script src="GUI/modulesGui.js"></script>
+    <script src="nodes_and_connections/init_nodes_and_connections.js"></script>
+    <script src="shader/shader_run.js"></script>
+    <script src="presets/presets.js"></script>
+</body>
+</html>
