@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Three.js Shader Stack</title>
     <style>
-        html *
-        {
-        font-size: 1em !important;
-        color: #000 !important;
-        font-family: Arial !important;
+        html * {
+            font-size: 1em !important;
+            color: #000 !important;
+            font-family: Arial !important;
         }
-        body { margin: 0; background-color: #000;}
+
+        body {
+            margin: 0;
+            background-color: #000;
+        }
+
         #top {
             position: absolute;
-            top: 10px; 
-            left: 10px; 
+            top: 10px;
+            left: 10px;
             z-index: 100;
         }
+
         #container {
             position: relative;
             width: 100%;
             height: 100vh;
             overflow: hidden;
         }
+
         .button {
             font-size: 12px !important;
             border-radius: 8px;
@@ -40,11 +47,13 @@
             width: 90px;
             height: 35px;
         }
+
         #selectorWrapper {
             max-width: 100px;
             padding: 4px;
             padding-bottom: 10px;
         }
+
         #canvasContainer {
             position: absolute;
             top: 0;
@@ -52,11 +61,16 @@
             width: 100%;
             height: 100%;
         }
-        canvas { display: block; width: 100vw; height: 100vh;}
 
+        canvas {
+            display: block;
+            width: 100vw;
+            height: 100vh;
+        }
     </style>
     <link href="GUI/gui.css" rel="stylesheet">
 </head>
+
 <body>
     <div id="container">
         <div id="top">
@@ -84,6 +98,38 @@
             <button class="button" onclick="changeModuleTransparency()">change module transparency</button>
             <button class="button" onclick="loadPreviousPreset()">previous preset</button>
             <button class="button" onclick="loadNextPreset()">next preset</button>
+            <button class="button" onclick="showInfo()">show/hide info</button>
+        </div>
+        <div id="info-overlay" class="info-overlay">
+            <h1>About</h1>
+
+            This is an emulation of a modular analog video synthesizer, which is entirely coded in javascript using
+            WebGL (Three.js) to display the image.<br>
+            It consists of nodes which each respresent a fragment shader. Each node has an input (left) and an output
+            (right). Connections can be made (or deleted) between those nodes.
+            Nodes can be generators (creating an image) or effects (modifying the input). All nodes connected to the
+            ouput node will be displayed.<br>
+            The generators input functions as a frequency modulation on the input, this can be used e.g. to create
+            interesting frequency modulation feedback loops.
+            Outputs can't be connected to the input of the same node, but this can be done by using a node in between to
+            create feedback loops (which lead to very interesting visual results).
+
+            <h2>How to use:</h2>
+
+            Open the main.html and play around with it. Move around some sliders or try out some presets. Create and
+            connect nodes however you wish.<br>
+            Currently Nodes only listen to the first input, except for the output module which displays all connected
+            inputs. (this might change in future versions).<br>
+
+            - select a module type in the dropdown and right click somewhere on the screen. This will create a new node
+            with the selected type of module<br>
+            - to connect nodes, left-click on an output on a node and then left-click on an input of another node<br>
+            - inputs are on the left, outputs on the right of the node<br>
+            - delete connections by clicking on the 'x' of the connection, delete nodes by clicking on the 'x' of the
+            module<br>
+            - all nodes connected to the output node will be displayed<br>
+            - all the other nodes have currently only a single input, so if you add multiple connections, only the first
+            one will be used (this might change in future versions)<br>
         </div>
     </div>
     <div id="canvasContainer"></div>
@@ -107,4 +153,5 @@
     <script src="shader/shader_run.js"></script>
     <script src="presets/presets.js"></script>
 </body>
+
 </html>

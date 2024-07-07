@@ -10,12 +10,12 @@ Outputs can't be connected to the input of the same node, but this can be done b
 
 Multiplatform, almost all browser support WebGL, so its easy to share.
 
-## How to use?
+## How to use:
 
 Open the main.html and play around with it. Move around some sliders or try out some presets. Create and connect nodes however you wish.
 Currently Nodes only listen to the first input, except for the output module which displays all connected inputs. (this might change in future versions).
 
-### GUI Explanations
+### GUI Explanations:
 
 - select a module type in the dropdown and right click somewhere on the screen. This will create a new node with the selected type of module
 - to connect nodes, left-click on an output on a node and then left-click on an input of another node

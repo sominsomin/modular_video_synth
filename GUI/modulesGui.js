@@ -169,6 +169,15 @@ function changeModuleTransparency() {
     setModuleTransparency();
 }
 
+function showInfo() {
+    const overlay = document.getElementById("info-overlay");
+    if (overlay.style.display === "none" || overlay.style.display === "") {
+        overlay.style.display = "block";
+    } else {
+        overlay.style.display = "none";
+    }
+}
+
 document.addEventListener('contextmenu', function (event) {
     event.preventDefault();
     let dropdown_text = moduleTypeDropdown.options[moduleTypeDropdown.selectedIndex].text;
