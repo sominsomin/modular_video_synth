@@ -3,7 +3,7 @@
 This is an emulation of a modular analog video synthesizer, which is coded in javascript and
 WebGL (with Three.js).
 This is inspired by digital tools such as 
-["https://www.kevinkripper.com/vsynth"](Vsynth) for Max/MSP, ["https://hydra.ojack.xyz/?sketch_id=example_11"](Hydra) or the digital hardware video synthesizer ["https://sleepycircuits.com/hypno"](Hypno). And, of course, in the analog realm, everything created by ["https://lzxindustries.net/"](lxz-industries).
+[Vsynth](https://www.kevinkripper.com/vsynth) for Max/MSP, [Hydra](https://hydra.ojack.xyz/?sketch_id=example_11) or the digital hardware video synthesizer [Hypno](https://sleepycircuits.com/hypno). And, of course, in the analog realm, everything created by [lxz-industries](https://lzxindustries.net/).
             
 This tool consists of a node-editor, to create a dataflow between modules. Each node respresent a fragment shader and has an input (left) and an output (right). Connections can be made (or deleted) between those nodes.
 Nodes can be generators (creating an image) or effects (modifying the input). All nodes connected to the output node will be displayed. The generators input functions as a frequency modulation on the input, this can be used e.g. to create
