@@ -343,20 +343,16 @@ function showContextMenu(event) {
     waveform.setAttribute('step', '0.1');
     waveform.setAttribute('value', '0.0');
     
-    // Append items to the context menu
     contextMenu.appendChild(lfo_amp);
     contextMenu.appendChild(lfo_freq);
     contextMenu.appendChild(waveform);
 
-    // Append the context menu to the body
     document.body.appendChild(contextMenu);
 
-    // Position the context menu
     contextMenu.style.display = 'block';
     contextMenu.style.left = `${event.pageX}px`;
     contextMenu.style.top = `${event.pageY}px`;
 
-    // Hide the context menu when clicking outside
     document.addEventListener('click', hideContextMenu);
 }
 

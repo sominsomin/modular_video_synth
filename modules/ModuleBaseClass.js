@@ -3,7 +3,6 @@ class ModuleBaseClass {
     }
 
     setShaderValue(shaderValueName, value) {
-        //this[shaderValueName].value = value;
         this[shaderValueName].updateValue(value);
     }
 }

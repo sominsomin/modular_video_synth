@@ -235,10 +235,10 @@
 .info-overlay {
     position: fixed;
     top: 10vw;
-    left: 10vh;
-    width: 80vw;
+    left: 15vh;
+    width: 85vw;
     height: 70vh;
-    background-color: rgba(255, 255, 255, 1.0); 
+    background-color: rgba(255, 255, 255, .8); 
     display: none;
     padding: 10px;
     z-index: 1000;

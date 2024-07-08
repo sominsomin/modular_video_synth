@@ -1,9 +1,13 @@
 # About
 
-This is an emulation of a modular analog video synthesizer, which is entirely coded in javascript using WebGL (Three.js) to display the image.
-It consists of nodes which each respresent a fragment shader. Each node has an input (left) and an output (right). Connections can be made (or deleted) between those nodes.
-Nodes can be generators (creating an image) or effects (modifying the input). All nodes connected to the ouput node will be displayed.
-The generators input functions as a frequency modulation on the input, this can be used e.g. to create interesting frequency modulation feedback loops.
+This is an emulation of a modular analog video synthesizer, which is coded in javascript and
+WebGL (with Three.js).
+This is inspired by digital tools such as 
+("https://www.kevinkripper.com/vsynth")[Vsynth] for Max/MSP, ("https://hydra.ojack.xyz/?sketch_id=example_11")[Hydra] or the digital hardware video synthesizer ("https://sleepycircuits.com/hypno")[Hypno]. And, of course, in the analog realm, everything created by ("https://lzxindustries.net/")[lxz-industries].
+            
+This tool consists of a node-editor, to create a dataflow between modules. Each node respresent a fragment shader and has an input (left) and an output (right). Connections can be made (or deleted) between those nodes.
+Nodes can be generators (creating an image) or effects (modifying the input). All nodes connected to the output node will be displayed. The generators input functions as a frequency modulation on the input, this can be used e.g. to create
+interesting frequency modulation feedback loops.
 Outputs can't be connected to the input of the same node, but this can be done by using a node in between to create feedback loops (which lead to very interesting visual results).
 
 ## Why Javascript, why frontend?

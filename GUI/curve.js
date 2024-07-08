@@ -26,7 +26,7 @@ function createLineDiv(output, input) {
         }
     );
 
-    // // Create X icon for deletion
+    // Create X icon for deletion
     var xIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     xIcon.setAttribute("width", "20");
     xIcon.setAttribute("height", "20");

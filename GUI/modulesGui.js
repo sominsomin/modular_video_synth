@@ -147,8 +147,8 @@ function generateRandomId() {
     return 'id-' + Math.random().toString(36).substr(2, 9) + '-' + Date.now().toString(36);
 }
 
-let transparent = true;
-let module_color;
+let transparent = false;
+let module_color = "rgba(255, 255, 255, 0.9)";
 
 function setModuleTransparency() {
     nodes.forEach(node => {

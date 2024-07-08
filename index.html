@@ -26,9 +26,8 @@
 
         #container {
             position: relative;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
+            width: 90%;
+            height: 100%;
         }
 
         .button {
@@ -64,8 +63,8 @@
 
         canvas {
             display: block;
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
         }
     </style>
     <link href="GUI/gui.css" rel="stylesheet">
@@ -104,12 +103,16 @@
             <button class="close-btn-info" onclick="showInfo()">-</button>
             <h1>About</h1>
 
-            <p>This is an emulation of a modular analog video synthesizer, which is entirely coded in javascript using
-            WebGL (Three.js) to display the image.</p>
-            <p>It consists of nodes which each respresent a fragment shader. Each node has an input (left) and an output
+            <p>This is an emulation of a modular analog video synthesizer, which is coded in javascript and
+            WebGL (with Three.js).</p>
+            <p>This is inspired by digital tools such as 
+            <a href="https://www.kevinkripper.com/vsynth">Vsynth</a> for Max/MSP, <a href="https://hydra.ojack.xyz/?sketch_id=example_11">Hydra</a> or the digital hardware video synthesizer <a href="https://sleepycircuits.com/hypno">Hypno</a>.
+            And, of course, in the analog realm, everything created by <a href="https://lzxindustries.net/">lxz-industries</a>.
+            </p>
+            <p>This tool consists of a node-editor, to create a dataflow between modules. Each node respresent a fragment shader and has an input (left) and an output
             (right). Connections can be made (or deleted) between those nodes.
             Nodes can be generators (creating an image) or effects (modifying the input). All nodes connected to the
-            ouput node will be displayed.</p>
+            output node will be displayed.</p>
             <p>The generators input functions as a frequency modulation on the input, this can be used e.g. to create
             interesting frequency modulation feedback loops.
             Outputs can't be connected to the input of the same node, but this can be done by using a node in between to
@@ -117,20 +120,23 @@
 
             <h2>How to use:</h2>
 
-            <p>Play around with it. Move around some sliders or try out some presets. Create and
-            connect nodes however you wish.</p>
+            <p>Play around with it. Move around some sliders or try out some presets (click the buttons 'next preset' or 'previous preset'). Create and
+            connect nodes however you wish and your hardware can handle it.</p>
             <p>Currently Nodes only listen to the first input, except for the output module which displays all connected
             inputs. (this might change in future versions).</p>
 
-            - select a module type in the dropdown and right click somewhere on the screen. This will create a new node
-            with the selected type of module<br>
-            - to connect nodes, left-click on an output on a node and then left-click on an input of another node<br>
-            - inputs are on the left, outputs on the right of the node<br>
-            - delete connections by clicking on the 'x' of the connection, delete nodes by clicking on the 'x' of the
-            module<br>
-            - all nodes connected to the output node will be displayed<br>
-            - all the other nodes have currently only a single input, so if you add multiple connections, only the first
-            one will be used (this might change in future versions)<br>
+            <ul>
+                <li>select a module type in the dropdown and right click somewhere on the screen. This will create a new node
+                    with the selected type of module</li>
+                <li>to connect nodes, left-click on an output on a node and then left-click on an input of another node</li>
+                <li>inputs are on the left, outputs on the right of the node</li>
+                <li>delete connections by clicking on the 'x' of the connection, delete nodes by clicking on the 'x' of the
+                    module</li>
+                <li>all nodes connected to the output node will be displayed</li>
+                <li>drag nodes by clicking and holding and moving the mouse</li>
+                <li>all nodes (except the output node) currently only have a single input, so if you add multiple connections, only the first
+                    one will be used (this might change in future versions)</li>
+            </ul>
         </div>
     </div>
     <div id="canvasContainer"></div>
@@ -153,7 +159,7 @@
     <script src="nodes_and_connections/init_nodes_and_connections.js"></script>
     <script src="shader/shader_run.js"></script>
     <script src="presets/presets.js"></script>
-    <script>loadPreset(23);</script>
+    <script>loadPreset(23); setModuleTransparency();</script>
 </body>
 
 </html>
