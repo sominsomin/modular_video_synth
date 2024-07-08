@@ -3,7 +3,8 @@
 This is an emulation of a modular analog video synthesizer, which is coded in javascript and
 WebGL (with Three.js).
 
-Try it out here: [Github Pages Link](https://sominsomin.github.io/modular_video_synth/)
+Try it out here: [Github Pages Link](https://sominsomin.github.io/modular_video_synth/).
+You'll need a browser that supports.
 
 This is inspired by digital tools such as 
 [Vsynth](https://www.kevinkripper.com/vsynth) for Max/MSP, [Hydra](https://hydra.ojack.xyz/?sketch_id=example_11) or the digital hardware video synthesizer [Hypno](https://sleepycircuits.com/hypno). And, of course, in the analog realm, everything created by [lxz-industries](https://lzxindustries.net/).
