@@ -93,23 +93,23 @@ Morph the topolgy of the input.
 
 ### Parameters
 
-p: phase of the oscillator/generator,
-f: frequency of the oscillator/generator,
-fm: frequency modulation strength,
-s: speed of the oscillator/generator,
-rot: rotation angle,
-amp: amplitude of the oscillator/generator/input,
-r: r color value,
-g: g color value,
-b: b color value,
-waveform: waveform of the oscillator/generator,
-offset: phase offset of the rgb value of the oscillator/generator,
-scale: scale the oscillator/generator/input,
-scale_fract: scale the oscillator/generator with repeating tile effect,
-n: number of corners of the polygon shape,
-xOff: offset in x-direction,
-yOff: offset in y-direction,
-pixelX: pixelation in x-direction,
-pixelY: pixelation in y-direction,
-space_warp: warping xy coordinates of the input,
+p: phase of the oscillator/generator\
+f: frequency of the oscillator/generator\
+fm: frequency modulation strength\
+s: speed of the oscillator/generator\
+rot: rotation angle\
+amp: amplitude of the oscillator/generator/input\
+r: r color value\
+g: g color value\
+b: b color value\
+waveform: waveform of the oscillator/generator\
+offset: phase offset in the rgb values of the oscillator/generator\
+scale: scale the oscillator/generator/input\
+scale_fract: scale the oscillator/generator with repeating tile effect\
+n: number of corners of the polygon shape\
+xOff: offset in x-direction\
+yOff: offset in y-direction\
+pixelX: pixelation in x-direction\
+pixelY: pixelation in y-direction\
+space_warp: warping xy coordinates of the input\
 nSides: number of sides
