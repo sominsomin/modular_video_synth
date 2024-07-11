@@ -30,7 +30,7 @@ display_texts = {
     'waveform': 'waveform of the oscillator/generator',
     'offset': 'phase offset in the rgb values of the oscillator/generator',
     'scale': 'scale the oscillator/generator/input',
-    'scale_fract': 'scale the oscillator/generator with repeating tile effect',
+    'scale_fract': 'scale the oscillator/generator with a repeating tile effect',
     'n': 'number of corners of the polygon shape',
     'xOff': 'offset in x-direction',
     'yOff': 'offset in y-direction',
