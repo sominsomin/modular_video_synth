@@ -17,6 +17,29 @@ class types {
     }
 }
 
+display_texts = {
+    'p': 'phase of the oscillator/generator',
+    'f': 'frequency of the oscillator/generator',
+    'fm': 'frequency modulation strength',
+    's': 'speed of the oscillator/generator',
+    'rot': 'rotation angle',
+    'amp': 'amplitude of the oscillator/generator/input',
+    'r': 'r color value',
+    'g': 'g color value',
+    'b': 'b color value',
+    'waveform': 'waveform of the oscillator/generator',
+    'offset': 'phase offset of the rgb value of the oscillator/generator',
+    'scale': 'scale the oscillator/generator/input',
+    'scale_fract': 'scale the oscillator/generator with repeating tile effect',
+    'n': 'number of corners of the polygon shape',
+    'xOff': 'offset in x-direction',
+    'yOff': 'offset in y-direction',
+    'pixelX': 'pixelation in x-direction',
+    'pixelY': 'pixelation in y-direction',
+    'space_warp': 'warping xy coordinates of the input',
+    'nSides': 'number of sides',
+}
+
 class ShaderValue {
     slider = null;
 
@@ -28,6 +51,7 @@ class ShaderValue {
         default_value = 0.0,
         display_name = '',
         shader_id = '',
+        display_text = '',
         //value = 0.,
     ) {
         this.id = id;
@@ -37,7 +61,8 @@ class ShaderValue {
         this.step_size = parseFloat(step_size);
         this.display_name = display_name;
         this.shader_id = shader_id;
-        this.value = parseFloat(default_value);   
+        this.value = parseFloat(default_value);
+        this.display_text = display_texts[display_name];
     }
 
     randomize_value(range = null) {
@@ -67,4 +92,3 @@ class ShaderValue {
         }
     }
 }
-    

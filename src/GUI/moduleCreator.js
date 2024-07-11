@@ -109,24 +109,28 @@ function makeDraggable(module) {
     let isDragging = false;
 
     var offsetX, offsetY;
-    var topRegionHeight = 10;
+    module.style.position = 'absolute';
 
     module.addEventListener('mousedown', function (event) {
-        // if (event.offsetY < topRegionHeight) {
         isDragging = true;
         isDrawing = false;
         offsetX = event.clientX - module.getBoundingClientRect().left;
         offsetY = event.clientY - module.getBoundingClientRect().top;
-        // }
+        event.preventDefault();
         updateConnectionPositions();
     });
 
     document.addEventListener('mousemove', function (event) {
         if (isDragging) {
-            module.style.left = (event.clientX - offsetX) + 'px';
-            module.style.top = (event.clientY - offsetY) + 'px';
+            const newX = event.clientX - offsetX;
+            const newY = event.clientY - offsetY;
+    
+            requestAnimationFrame(() => {
+                module.style.left = newX + 'px';
+                module.style.top = newY + 'px';
+                updateConnectionPositions();
+            });
         }
-        updateConnectionPositions();
     });
 
     document.addEventListener('mouseup', function () {
@@ -146,12 +150,13 @@ function createInputOutput(module, shader_class) {
         selectionMode = true;
         selectedOutput = output;
         selectedShaderClass = shader_class;
+
+        document.querySelectorAll('.input').forEach(input => {
+            input.classList.add('blinking');
+        });
     });
 
     input.addEventListener('click', (e) => {
-        let endX = e.clientX;
-        let endY = e.clientY;
-
         if (selectionMode == true) {
             let input_id = selectedShaderClass.id;
             let output_id = shader_class.id;
@@ -161,11 +166,30 @@ function createInputOutput(module, shader_class) {
             selectedOutput = null;
             selectedShaderClass = null;
 
+            document.querySelectorAll('.input').forEach(input => {
+                input.classList.remove('blinking');
+            });
         }
     });
 
     return [input, output];
 }
+
+function resetSelectionMode() {
+    selectionMode = false;
+    selectedOutput = null;
+    selectedShaderClass = null;
+
+    document.querySelectorAll('.input').forEach(input => {
+        input.classList.remove('blinking');
+    });
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        resetSelectionMode();
+    }
+});
 
 function createModule(x, y, shader_class) {
     var module = document.createElement('div');
@@ -222,7 +246,12 @@ function createShaderValueSlider(shader_value, module) {
 
     const nameText = document.createElement('span');
     nameText.textContent = shader_value.display_name;
-    nameText.classList.add('slider-name');
+    nameText.classList.add('slider-name', 'tooltip');
+
+    const tooltipText = document.createElement('span');
+    tooltipText.textContent = shader_value.display_text;
+    tooltipText.classList.add('tooltip-text');
+    nameText.appendChild(tooltipText);
 
     const input = document.createElement('input');
     input.classList.add('range-slider');
