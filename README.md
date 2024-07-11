@@ -20,7 +20,7 @@ Multiplatform, almost all browser support WebGL, so its easy to share.
 
 ## How to use:
 
-Open the main.html and play around with it. Move around some sliders or try out some presets. Create and connect nodes however you wish.
+Try it out here: [Github Pages Link](https://sominsomin.github.io/modular_video_synth/) or clone the repo, open the index.html and play around with it. Move around some sliders or try out some presets. Create and connect nodes however you wish.
 Currently Nodes only listen to the first input, except for the output module which displays all connected inputs. (this might change in future versions).
 
 ### GUI Explanations:
