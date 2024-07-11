@@ -4,7 +4,7 @@ This is an emulation of a modular analog video synthesizer, which is coded in ja
 WebGL (with Three.js).
 
 Try it out here: [Github Pages Link](https://sominsomin.github.io/modular_video_synth/).
-You'll need a browser that supports.
+Youll need a browser that supports.
 
 This is inspired by digital tools such as 
 [Vsynth](https://www.kevinkripper.com/vsynth) for Max/MSP, [Hydra](https://hydra.ojack.xyz/?sketch_id=example_11) or the digital hardware video synthesizer [Hypno](https://sleepycircuits.com/hypno). And, of course, in the analog realm, everything created by [lxz-industries](https://lzxindustries.net/).
@@ -31,6 +31,8 @@ Currently Nodes only listen to the first input, except for the output module whi
 - delete connections by clicking on the 'x' of the connection, delete nodes by clicking on the 'x' of the module
 - all nodes connected to the output node will be displayed
 - all the other nodes have currently only a single input, so if you add multiple connections, only the first one will be used (this might change in future versions)
+- move around sliders to change values, double-click on a slider to reset the value to it's default value or change the value by doubleclicking to the value display on the right side of the slider and type a value
+- drag around modules by clicking somewhere on a node and moving the mouse
 
 
 ## Nodes
@@ -60,7 +62,6 @@ Same as Polyshape but no movement and frequency.
 
 Just a constant color filling the full screen.
 
-
 ### FX
 
 FX nodes modify the image which comes in through the input.
@@ -88,3 +89,26 @@ Scale the image, the image is repeated as tiles.
 #### space_warp
 
 Morph the topolgy of the input.
+
+### Parameters
+
+p: phase of the oscillator/generator,
+f: frequency of the oscillator/generator,
+fm: frequency modulation strength,
+s: speed of the oscillator/generator,
+rot: rotation angle,
+amp: amplitude of the oscillator/generator/input,
+r: r color value,
+g: g color value,
+b: b color value,
+waveform: waveform of the oscillator/generator,
+offset: phase offset of the rgb value of the oscillator/generator,
+scale: scale the oscillator/generator/input,
+scale_fract: scale the oscillator/generator with repeating tile effect,
+n: number of corners of the polygon shape,
+xOff: offset in x-direction,
+yOff: offset in y-direction,
+pixelX: pixelation in x-direction,
+pixelY: pixelation in y-direction,
+space_warp: warping xy coordinates of the input,
+nSides: number of sides
