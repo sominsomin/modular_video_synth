@@ -31,6 +31,7 @@ Currently Nodes only listen to the first input, except for the output module whi
 - delete connections by clicking on the 'x' of the connection, delete nodes by clicking on the 'x' of the module
 - all nodes connected to the output node will be displayed
 - all the other nodes have currently only a single input, so if you add multiple connections, only the first one will be used (this might change in future versions)
+- drag nodes by clicking and holding and moving the mouse
 - move around sliders to change values, double-click on a slider to reset the value to it's default value or change the value by doubleclicking to the value display on the right side of the slider and type a value
 - drag around modules by clicking somewhere on a node and moving the mouse
 
