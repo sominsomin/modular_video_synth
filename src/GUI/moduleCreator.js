@@ -270,9 +270,9 @@ function createShaderValueSlider(shader_value, module) {
     slider_wrapper.appendChild(input);
     slider_wrapper.appendChild(valueDisplay);
 
-    const lfo_dot = document.createElement('div');
-    lfo_dot.classList.add('lfo-dot');
-    slider_wrapper.appendChild(lfo_dot);
+    // const lfo_dot = document.createElement('div');
+    // lfo_dot.classList.add('lfo-dot');
+    // slider_wrapper.appendChild(lfo_dot);
 
     module.appendChild(slider_wrapper);
 
@@ -327,15 +327,15 @@ function createShaderValueSlider(shader_value, module) {
         editableInput.focus();
     });
 
-    lfo_dot.addEventListener('dblclick', (event) => {
-        console.log('');
-        showContextMenu(event);
-        event.stopPropagation();
-    });
+    // lfo_dot.addEventListener('dblclick', (event) => {
+    //     console.log('');
+    //     showContextMenu(event);
+    //     event.stopPropagation();
+    // });
 
-    lfo_dot.addEventListener('mouseleave', () => {
-        //hideContextMenu();
-    });
+    // lfo_dot.addEventListener('mouseleave', () => {
+    //     //hideContextMenu();
+    // });
 
     return slider_wrapper;
 }

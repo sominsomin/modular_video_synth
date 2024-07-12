@@ -1894,4 +1894,61 @@ let presets = [{
         }
     ]
 },
+{
+    "nodes": [
+        {
+            "id": "id-n7mhi3z1l-lxnnvvqg",
+            "shader_values": {},
+            "module_name": "output",
+            "x": 449.333,
+            "y": 418
+        },
+        {
+            "id": "id-y1bpyub5d-lxnnvvqg",
+            "shader_values": {
+                "p": "0.45",
+                "f": "4.87",
+                "fm": "1.72",
+                "s": "-0.01",
+                "rot": "3.37",
+                "amp": "2",
+                "r": "0.72",
+                "g": "0.78",
+                "b": "0.61",
+                "waveform": "2.34",
+                "offset": "0.8",
+                "scale_fract": "0.67"
+            },
+            "module_name": "noise",
+            "x": 71.75,
+            "y": 100
+        },
+        {
+            "id": "id-je9353p22-lxuizmhi",
+            "shader_values": {
+                "scale_fract": "1.96"
+            },
+            "module_name": "scale_fract",
+            "x": 401,
+            "y": 170
+        }
+    ],
+    "connections": [
+        {
+            "fromNode": "id-y1bpyub5d-lxnnvvqg",
+            "toNode": "id-n7mhi3z1l-lxnnvvqg",
+            "id": "id-foz7ah4kz-lxnnxwxr"
+        },
+        {
+            "fromNode": "id-y1bpyub5d-lxnnvvqg",
+            "toNode": "id-je9353p22-lxuizmhi",
+            "id": "id-d69swcvud-lxuizpnz"
+        },
+        {
+            "fromNode": "id-je9353p22-lxuizmhi",
+            "toNode": "id-y1bpyub5d-lxnnvvqg",
+            "id": "id-ajdh927p7-lxuizr8j"
+        }
+    ]
+},
 ]
